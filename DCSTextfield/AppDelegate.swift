@@ -2,7 +2,6 @@
 //  AppDelegate.swift
 //  DCSTextfield
 //
-//  Created by Dinesh Saini on 12/07/22.
 //
 
 import UIKit

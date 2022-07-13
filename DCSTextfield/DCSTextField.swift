@@ -1,9 +1,5 @@
 //
 //  DCSTextField.swift
-//  JobsHolaClient
-//
-//  Created by Dinesh on 25/07/20.
-//  Copyright © 2020 Dinesh. All rights reserved.
 //
 
 import UIKit
