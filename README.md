@@ -1,7 +1,7 @@
 # DCSTextField
 A customised UITextField for iOS 
 
-#This contains a simple code for textfield. #Very simple to use, Just drag and drop 2 source files in your project and start using. #DCSTextField
+#This contains a simple code for textfield. #Very simple to use, Just drag and drop source files in your project and start using. #DCSTextField
 
 #How to use:
 
