@@ -50,6 +50,23 @@ enum ValueType: Int {
     /************ Added new feature **********************/
     @IBInspectable var allowedCharInString: String = ""
 
+     var borderColor:UIColor = .lightGray{
+        didSet{
+            self.setup()
+        }
+    }
+    
+    var borderWidth:CGFloat = 1.0{
+        didSet{
+            self.setup()
+        }
+    }
+    
+    var cornerRadius:CGFloat = 5.0{
+        didSet{
+            self.setup()
+        }
+    }
     
     // MARK:- Init
     required init?(coder aDecoder:NSCoder) {
@@ -63,6 +80,7 @@ enum ValueType: Int {
     }
     
     private func setup(){
+        self.makeViewCircularWithCornerRadius(self, borderColor: borderColor, borderWidth: borderWidth, cornerRadius: cornerRadius)
     }
     
     func setupPlaceholder(){
@@ -147,6 +165,13 @@ enum ValueType: Int {
         }
         
         return true
+    }
+    
+    func makeViewCircularWithCornerRadius(_ view:UIView,borderColor:UIColor,borderWidth:CGFloat, cornerRadius: CGFloat){
+        view.layer.borderColor = borderColor.cgColor
+        view.layer.borderWidth = borderWidth
+        view.layer.cornerRadius = cornerRadius
+        view.layer.masksToBounds = true
     }
 }
 
