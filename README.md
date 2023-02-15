@@ -38,6 +38,18 @@ class ViewController: UIViewController,UITextFieldDelegate {
             textfield.allowedCharInString = "+0123456789"
             textfield.maxLength = 13
             textfield.valueType = .phoneNumberWithPlus
+            
+            
+    // MARK: New updates add corner and border color and Width
+        
+        textfield.cornerRadius = 6.0
+        textfield.borderColor = .red
+        textfield.borderWidth = 1.5
+        
+        // MARK: Show or hide border
+        
+        textfield.borderShow = true
+
         
         // Do any additional setup after loading the view.
     }
