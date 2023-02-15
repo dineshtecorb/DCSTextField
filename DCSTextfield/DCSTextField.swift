@@ -25,6 +25,14 @@ enum ValueType: Int {
         }
     }
     
+    var textPadding = UIEdgeInsets(
+        top: 10,
+        left: 20,
+        bottom: 10,
+        right: 20
+    )
+
+    
     override var font: UIFont?{
         didSet{
             setupPlaceholder()
@@ -49,6 +57,11 @@ enum ValueType: Int {
 
     /************ Added new feature **********************/
     @IBInspectable var allowedCharInString: String = ""
+    
+    
+    var borderShow:Bool = true{
+        didSet{setup()}
+    }
 
      var borderColor:UIColor = .lightGray{
         didSet{
@@ -80,7 +93,7 @@ enum ValueType: Int {
     }
     
     private func setup(){
-        self.makeViewCircularWithCornerRadius(self, borderColor: borderColor, borderWidth: borderWidth, cornerRadius: cornerRadius)
+        self.makeViewCircularWithCornerRadius(self, borderColor: borderColor, borderWidth: borderShow ? borderWidth : 0, cornerRadius: cornerRadius)
     }
     
     func setupPlaceholder(){
@@ -173,6 +186,18 @@ enum ValueType: Int {
         view.layer.cornerRadius = cornerRadius
         view.layer.masksToBounds = true
     }
+    
+
+    override func textRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.textRect(forBounds: bounds)
+        return rect.inset(by: textPadding)
+    }
+
+    override func editingRect(forBounds bounds: CGRect) -> CGRect {
+        let rect = super.editingRect(forBounds: bounds)
+        return rect.inset(by: textPadding)
+    }
+
 }
 
 

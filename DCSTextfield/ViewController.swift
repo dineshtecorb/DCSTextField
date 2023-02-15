@@ -43,6 +43,11 @@ class ViewController: UIViewController,UITextFieldDelegate {
         textfield.borderColor = .red
         textfield.borderWidth = 1.5
         
+        // MARK: Show or hide border
+        
+        textfield.borderShow = true
+        
+        
         // Do any additional setup after loading the view.
     }
 
